@@ -43,7 +43,7 @@ def programmatic_ssml_to_chunks(ssml_string: str, chunk_size: int):
         # If this is a voice element, update our tracking
         if element.tag == 'voice':
             current_voice = element.get('name')
-        
+
         # Convert element to string to measure its length
         element_string = ET.tostring(element, encoding='unicode')
 
@@ -52,7 +52,7 @@ def programmatic_ssml_to_chunks(ssml_string: str, chunk_size: int):
         if current_chunk_elements and current_chunk_char_count + len(element_string) > chunk_size:
             # Create a new <speak> root for the chunk
             new_root = ET.Element('speak')
-            
+
             # If we have a current voice context and the chunk doesn't start with a voice tag,
             # wrap the content in a voice tag
             if current_voice and current_chunk_elements[0].tag != 'voice':
@@ -61,7 +61,7 @@ def programmatic_ssml_to_chunks(ssml_string: str, chunk_size: int):
                 new_root.append(voice_wrapper)
             else:
                 new_root.extend(current_chunk_elements)
-                
+
             final_chunks.append(ET.tostring(new_root, encoding='unicode'))
 
             # Reset for the next chunk
@@ -75,7 +75,7 @@ def programmatic_ssml_to_chunks(ssml_string: str, chunk_size: int):
     # Add the last remaining chunk
     if current_chunk_elements:
         new_root = ET.Element('speak')
-        
+
         # If we have a current voice context and the chunk doesn't start with a voice tag,
         # wrap the content in a voice tag
         if current_voice and current_chunk_elements[0].tag != 'voice':
@@ -84,7 +84,7 @@ def programmatic_ssml_to_chunks(ssml_string: str, chunk_size: int):
             new_root.append(voice_wrapper)
         else:
             new_root.extend(current_chunk_elements)
-            
+
         final_chunks.append(ET.tostring(new_root, encoding='unicode'))
 
     return final_chunks
@@ -100,7 +100,7 @@ def synthesize_ssml(ssml_file_path: str, output_path: str, chunk_size: int = DEF
         print(f"Output: {output_path}")
         print(f"Chunk size: {chunk_size} characters")
         print(f"{'=' * 50}\n")
-        
+
         print(f"Step 1: Reading SSML from '{ssml_file_path}'...")
         with open(ssml_file_path, "r", encoding="utf-8") as f:
             # Read the content inside the <speak> tags
@@ -114,7 +114,7 @@ def synthesize_ssml(ssml_file_path: str, output_path: str, chunk_size: int = DEF
 
         client = texttospeech.TextToSpeechClient()
         audio_config = texttospeech.AudioConfig(audio_encoding=texttospeech.AudioEncoding.MP3)
-        
+
         # Voice configuration - required by API even when SSML has voice tags
         voice = texttospeech.VoiceSelectionParams(
             language_code="en-US",
@@ -135,7 +135,7 @@ def synthesize_ssml(ssml_file_path: str, output_path: str, chunk_size: int = DEF
         for i, chunk in enumerate(chunks):
             print(f"  - Processing chunk {i + 1} of {len(chunks)}...")
             synthesis_input = texttospeech.SynthesisInput(ssml=chunk)
-            
+
             # Always provide voice parameter - it acts as a fallback
             response = client.synthesize_speech(
                 input=synthesis_input,
@@ -185,46 +185,46 @@ Examples:
   python tts_converter.py input.ssml --credentials my-creds.json
         """
     )
-    
+
     parser.add_argument(
         "input",
         help="Input SSML file path"
     )
-    
+
     parser.add_argument(
         "-o", "--output",
         help="Output MP3 file path (default: input_file.mp3)",
         default=None
     )
-    
+
     parser.add_argument(
         "-c", "--chunk-size",
         type=int,
         default=DEFAULT_CHUNK_SIZE,
         help=f"Maximum characters per chunk (default: {DEFAULT_CHUNK_SIZE}, max: 5000)"
     )
-    
+
     parser.add_argument(
         "--credentials",
         default=DEFAULT_CREDENTIALS,
         help=f"Google Cloud credentials JSON file (default: {DEFAULT_CREDENTIALS})"
     )
-    
+
     args = parser.parse_args()
-    
+
     # Set credentials
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = args.credentials
-    
+
     # Determine output filename if not specified
     if args.output is None:
         base_name = os.path.splitext(args.input)[0]
         args.output = f"{base_name}.mp3"
-    
+
     # Validate chunk size
     if args.chunk_size > 5000:
         print("⚠️  Warning: Chunk size > 5000 may cause API errors. Using 4500.")
         args.chunk_size = 4500
-    
+
     # Run the conversion
     synthesize_ssml(args.input, args.output, args.chunk_size)
 
