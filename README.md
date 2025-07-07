@@ -8,6 +8,7 @@ This project converts SSML (Speech Synthesis Markup Language) files to audio usi
 - **Long text support**: Automatically splits content over 5,000 characters into chunks
 - **Audio stitching**: Seamlessly combines chunks into a single audio file
 - **Preserves SSML formatting**: Maintains prosody, emphasis, breaks, and other SSML features
+- **Pronunciation dictionary**: Automatically applies correct pronunciations for names and special terms
 
 ## Prerequisites
 
@@ -93,6 +94,45 @@ The script will:
 - Synthesize audio for each chunk
 - Stitch chunks together into a single MP3 file
 - Display progress and final duration
+
+## Pronunciation Dictionary
+
+Ensure proper pronunciation of names and special terms using the CSV-based pronunciation system:
+
+### Apply Pronunciations
+
+```bash
+# Apply pronunciations before converting
+python apply_pronunciations.py input.ssml -o output_with_pronunciations.ssml
+
+# Then convert to audio
+python tts_converter.py output_with_pronunciations.ssml
+```
+
+### Dictionary Format
+
+Edit `pronunciation_dictionary.csv` to add custom pronunciations:
+
+```csv
+word,ipa,alias
+Karbala,ˈkɑːrbələ,car-bah-lah
+Hussain,huˈseɪn,who-sane
+Zayd,zeɪd,zayed
+```
+
+- **word**: The word to pronounce
+- **ipa**: IPA (International Phonetic Alphabet) notation
+- **alias**: Simple "sounds-like" pronunciation
+
+### Pronunciation Formats
+
+```bash
+# Use IPA notation (more precise)
+python apply_pronunciations.py input.ssml -o output.ssml --format ipa
+
+# Use alias format (simpler, more compatible)
+python apply_pronunciations.py input.ssml -o output.ssml --format alias
+```
 
 ## SSML Format
 
