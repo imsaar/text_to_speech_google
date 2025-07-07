@@ -1,0 +1,62 @@
+<speak>
+    <voice name="en-US-News-L">
+        <p><s>The Lantern Path</s><break time="1s"/><s>Stories of Courage and Character</s><break time="500ms"/><s>Adventures Inspired by the Spirit of Karbala</s></p>
+        <p><s>Introduction</s></p>
+        <p><s>These stories are not just meant to be read.</s><break time="500ms"/><s>They are meant to be felt, remembered, and lived.</s><s>Each of the ten stories in this book is inspired by a value that shines brightly in the story of Karbala:</s><s>Truth, Loyalty, Compassion, Resilience, Sacrifice, Trust, Justice, Patience, Hope, and Family Bonds.</s></p>
+        <p><s>Through the eyes of young heroes on adventurous paths, we see these timeless values not in history books, but in living hearts and difficult choices.</s><s>Our goal is not to retell the story of Karbala, but to show how it echoes—in our schools, our friendships, our families, and our futures.</s></p>
+        <p><s>These are not battles of swords, but of character.</s><s>They are choices made that define who we are.</s></p>
+        <p><s>To the reader: May you find a piece of yourself in each story.</s></p>
+        <p><s>To parents and teachers: Please take time with each chapter.</s><s>Let the story become a discussion, and the value become a habit.</s></p>
+    </voice>
+    <break time="2s"/>
+    <voice name="en-US-News-L">
+        <p><s>Chapter One: The Lantern Keepers.</s><break time="1s"/><s>Theme: Sacrifice and Courage.</s></p>
+    </voice>
+    <voice name="en-US-News-N">
+        <p><s>In a hidden valley where the sun hadn't shone for a hundred years—not even on public holidays—there was a small village called Noorabad.</s><s>And in Noorabad, every child dreamed of becoming a Lantern Keeper.</s><s>Not because it was glamorous (it wasn't), or because it came with free snacks (it didn't), but because Lantern Keepers were the only ones brave enough to walk the paths of darkness and carry light where no one else dared.</s></p>
+        <p><s>Twelve-year-old Zayd had just been accepted into the Keeper's Guild.</s><s>He was thrilled.</s><s>He'd even practiced heroic poses in front of a mirror.</s></p>
+    </voice>
+    <voice name="en-US-Wavenet-I">
+        <p><s><prosody rate="slow" pitch="-2st">"Zayd, Bringer of Light!"</prosody></s></p>
+    </voice>
+    <voice name="en-US-News-N">
+        <p><s>he whispered dramatically. The mirror was not impressed.</s></p>
+        <p><s>Each Lantern Keeper was given a glowing orb. But this was no ordinary lantern—it didn't run on batteries or moonlight. It burned only with truth, courage, and the willingness to help others.</s><s>If you got scared or selfish or started lying, the light flickered… and sometimes went out completely.</s><s>(One boy had tried using it to sneak cookies at midnight. Let's just say he ended up in the dark. Literally.)</s></p>
+        <p><s>On the third night of training, the Guild sent Zayd and a few other young Keepers on their first real mission—carrying light to the village of Daruldeep, which was lost in a fog where people had forgotten how to speak kindly to each other.</s><s>There was Mariam, the fastest runner among them.</s><s>There was Faris, who claimed he could speak to squirrels (he could not).</s><s>And there was Nura, who always carried extra snacks and said that <emphasis level="moderate">"even heroes get hangry."</emphasis></s></p>
+        <p><s>Together, they walked into the misty path. Their lanterns glowed gently in front of them.</s><s>But the fog whispered things—scary, twisting things.</s><prosody rate="slow" pitch="-3st" volume="soft"><s>"You're not brave,"</s></prosody><s>it hissed to Zayd.</s><prosody rate="slow" pitch="-3st" volume="soft"><s>"You're just pretending. Turn back. Keep your light for yourself."</s></prosody></p>
+        <p><s>And Zayd was tempted. His hands shook.</s><break time="500ms"/><s>He thought,</s><emphasis level="strong"><s>What if I get lost? What if I run out of light?</s></emphasis></p>
+        <p><s>Then, ahead in the fog, they saw someone—collapsed, breathing hard. It was an older Keeper, injured and weak. His lantern was almost out.</s><s>The others looked unsure. They were scared too.</s></p>
+        <p><s>Zayd hesitated. Part of him whispered: <prosody rate="slow" volume="soft">'Keep the light. You need it. You might get lost.'</prosody></s><s>But then he remembered something his grandfather had told him about Karbala—how the companions of Imam Hussain gave everything, not because they knew they would win, but because they believed it was right.</s></p>
+    </voice>
+    <voice name="en-US-Wavenet-I">
+        <p><s><emphasis level="moderate">"The companions of Karbala gave not because they would win, but because they believed. What do I believe in?"</emphasis></s></p>
+    </voice>
+    <voice name="en-US-News-N">
+        <p><s>Zayd asked himself. And in that moment, he knew.</s><s>Zayd took one step forward. Then another. Then he did something no one expected.</s><s>He removed his own glowing orb… and passed it to the injured Keeper.</s></p>
+    </voice>
+    <voice name="en-US-Wavenet-I">
+        <p><s>"You light the way,"</s><s>he said. "We'll follow."</s></p>
+    </voice>
+    <voice name="en-US-News-N">
+        <p><s>The moment the orb touched the man's hands, it pulsed brighter than ever before.</s><s>And Zayd's own path, though now dark, seemed to be held up by the quiet glow of his friends walking beside him.</s></p>
+    </voice>
+    <voice name="en-US-News-K">
+        <p><s>Mariam smiled. "That was brave," she said.</s></p>
+    </voice>
+    <voice name="en-US-Wavenet-H">
+        <p><s>Nura handed him a snack. "Also dumb. But beautifully dumb."</s></p>
+    </voice>
+    <voice name="en-US-Wavenet-J">
+        <p><s>Faris added, "I'm telling the squirrels."</s></p>
+    </voice>
+    <voice name="en-US-News-N">
+        <p><s>When they finally reached Daruldeep, the injured Keeper used the light to guide everyone home.</s><s>And something strange happened—Zayd's lantern, though he'd given it away, began to glow again.</s><s>Not from magic, but from the trust of his friends, the bravery in his heart, and the belief that some things are worth walking in the dark for.</s></p>
+        <p><s>Later, when the Guild Master asked what he'd learned, Zayd paused.</s></p>
+    </voice>
+    <voice name="en-US-Wavenet-I">
+        <p><s>"I learned," he said slowly, "that the brightest light isn't the one you keep—it's the one you give."</s></p>
+    </voice>
+    <voice name="en-US-News-N">
+        <p><s>And somewhere in the heavens, the companions of Karbala smiled—because someone, after all these years, still understood.</s></p>
+    </voice>
+</speak>

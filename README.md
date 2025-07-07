@@ -37,34 +37,62 @@ sudo apt-get install ffmpeg
 ## Setup
 
 1. Place your Google Cloud service account credentials JSON file in the project directory
-2. Update the credentials filename in `tts_ssml_long_audio_converter.py`:
+2. Update the credentials filename (or use --credentials flag):
 ```python
+# In the script (default)
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "your-credentials-file.json"
+
+# Or via command line
+python tts_converter.py input.ssml --credentials your-credentials-file.json
 ```
 
 ## Usage
 
-1. Create or place your SSML file in the project directory (default: `lantern_path.ssml`)
+### Basic Usage
 
-2. Run the converter:
+Convert any SSML file to audio using the unified converter:
+
 ```bash
-python tts_ssml_long_audio_converter.py
+python tts_converter.py input.ssml
 ```
 
-3. The script will:
-   - Read your SSML file
-   - Split it into chunks if needed (max 4,500 characters per chunk)
-   - Synthesize audio for each chunk
-   - Stitch chunks together into a single MP3 file
-   - Save the output (default: `lantern_path_programmatic.mp3`)
+This will create `input.mp3` in the same directory.
 
-## Configuration
+### Advanced Options
 
-You can modify these settings in the script:
+```bash
+# Specify custom output file
+python tts_converter.py input.ssml -o custom_output.mp3
 
-- `SSML_INPUT_FILE`: Input SSML filename
-- `OUTPUT_AUDIO_FILE`: Output audio filename
-- `CHUNK_SIZE`: Maximum characters per chunk (default: 4500, max: 5000)
+# Adjust chunk size (default: 4500, max: 5000)
+python tts_converter.py input.ssml --chunk-size 3000
+
+# Use different Google Cloud credentials
+python tts_converter.py input.ssml --credentials other-project.json
+
+# Get help
+python tts_converter.py -h
+```
+
+### Examples
+
+```bash
+# Convert the full book
+python tts_converter.py lantern_path.ssml
+
+# Convert with descriptive output name
+python tts_converter.py lantern_path_full_best_voices.ssml -o complete_audiobook.mp3
+
+# Quick test with smaller chunks
+python tts_converter.py test.ssml --chunk-size 1000
+```
+
+The script will:
+- Read your SSML file
+- Split it into chunks if needed (respecting the chunk size limit)
+- Synthesize audio for each chunk
+- Stitch chunks together into a single MP3 file
+- Display progress and final duration
 
 ## SSML Format
 
